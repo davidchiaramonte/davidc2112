@@ -12,6 +12,7 @@ view: orders {
   dimension: campaign {
     type: string
     sql: ${TABLE}.campaign ;;
+    description: "SOME DESCRIPTION HERE"
   }
 
   dimension_group: created {
@@ -37,6 +38,22 @@ view: orders {
     type: number
     # hidden: yes
     sql: ${TABLE}.user_id ;;
+  }
+
+  dimension: numerator {
+    type: number
+    sql: 2578 ;;
+  }
+
+  dimension: denominator {
+    type: number
+    sql: 1000 ;;
+  }
+
+  measure: negative_test {
+    type: max
+    sql: ${numerator}/${denominator}*-1;;
+    value_format_name: percent_2
   }
 
   measure: count {
