@@ -97,6 +97,7 @@ view: orders {
     group_item_label: "Comm Net - CP - Cohort"
     label: "Commissions"
     description: "The net sum of commissions for the cohort for the current period"
+    view_label: "Adv Benchmarking"
     value_format_name: decimal_0
     sql: ${user_id} ;;
     #filters: [date_in_timeframe: "yes", series: "Cohort"]
