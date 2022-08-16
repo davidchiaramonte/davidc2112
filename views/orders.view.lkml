@@ -95,19 +95,38 @@ view: orders {
     type: sum
     group_label: "Commissions Net - Cohort"
     group_item_label: "Comm Net - CP - Cohort"
-    label: "Commissions"
+    label: "Commissions (Cancelled)"
     description: "The net sum of commissions for the cohort for the current period"
     view_label: "Adv Benchmarking"
     value_format_name: decimal_0
     sql: ${user_id} ;;
-    #filters: [date_in_timeframe: "yes", series: "Cohort"]
+    filters: [status: "cancelled"]
     html:
     {{rendered_value}}
     <br>
     <br>
     Commissions YoY
     <br>
-    {{id._rendered_value}};;
+    {{status._rendered_value}};;
+  }
+
+  measure: commission_cp_cohort_2 {
+    type: sum
+    group_label: "Commissions Net - Cohort"
+    group_item_label: "Comm Net - CP - Cohort"
+    label: "Commissions (Complete)"
+    description: "The net sum of commissions for the cohort for the current period"
+    view_label: "Adv Benchmarking"
+    value_format_name: decimal_0
+    sql: ${user_id} ;;
+    filters: [status: "complete"]
+    html:
+    {{rendered_value}}
+    <br>
+    <br>
+    Commissions YoY
+    <br>
+    {{status._rendered_value}};;
   }
 
   measure: negative_test {
