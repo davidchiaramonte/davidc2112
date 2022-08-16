@@ -110,6 +110,25 @@ view: orders {
     {{status._rendered_value}};;
   }
 
+  # ORIGINAL FIELD -- HAD TO MAKE CHANGES FOR VALID FIELD REFERENCES
+  # measure: commission_cp_cohort {
+  #   type: sum
+  #   group_label: "Commissions Net - Cohort"
+  #   group_item_label: "Comm Net - CP - Cohort"
+  #   label: "Commissions"
+  #   description: "The net sum of commissions for the cohort for the current period"
+  #   value_format_name: decimal_0
+  #   sql: ${net_commission} ;;
+  #   filters: [date_in_timeframe: "yes", series: "Cohort"]
+  #   html:
+  #   {{rendered_value}}
+  #   <br>
+  #   <br>
+  #   Commissions YoY
+  #   <br>
+  #   {{commission_pop_cohort_2._rendered_value}};;
+  # }
+
   measure: commission_cp_cohort_2 {
     type: sum
     group_label: "Commissions Net - Cohort"
