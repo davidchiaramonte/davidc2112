@@ -56,6 +56,6 @@ view: products {
 
   measure: count_with_link {
     type: count
-    html: <a href='/dashboards/134?Brand={{ brand._value | url_encode }}&Region={{ category._value | url_encode }} ;;
+    html: <a href='/dashboards/134?Brand={{ brand._value | url_encode }}&Region={{ category._value | url_encode }}'>{{rendered_value}}</a>}} ;;
   }
 }
