@@ -19,6 +19,11 @@ view: products {
     sql: ${TABLE}.category ;;
   }
 
+  dimension: region {
+    type: string
+    sql: ${TABLE}.category ;;
+  }
+
   dimension: department {
     type: string
     sql: ${TABLE}.department ;;
@@ -47,5 +52,10 @@ view: products {
   measure: count {
     type: count
     drill_fields: [id, item_name, product_sheets.count, inventory_items.count]
+  }
+
+  measure: count_with_link {
+    type: count
+    html: <a href='/dashboards/134?Brand={{ brand._value | url_encode }}&Region={{ category._value | url_encode }} ;;
   }
 }
