@@ -1,4 +1,4 @@
-connection: "looker-dcl-data"
+connection: "thelook"
 
 # include all the views
 include: "/views/**/*.view"
